@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-class SqlFactory extends DBFactory{
+class SqlFactory{
     private $_where = '';
     private $_limit = array();
     private $_conClass = '';
@@ -14,7 +14,6 @@ class SqlFactory extends DBFactory{
     private $_error = '';
     private $_is_error = false;
     public function __construct($conClass, $connector = null) {
-        parent::__construct($connector);
         $this->_conClass = $conClass;
     }
     

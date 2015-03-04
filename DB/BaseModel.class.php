@@ -37,21 +37,6 @@ abstract class BaseModel{
         return in_array($key, $keys);
     }
     
-    public function load($sets) {
-        $this->_init_set = array();
-        $this->setDefaultParam();
-        if (is_array($sets)) {
-            $keys = $this->tableLine();
-            foreach ($sets as $k => $v) {
-                if (in_array($k, $keys)) {
-                    $this->$k = $v;
-                }
-            }
-            return true;
-        }
-        return false;
-    }
-
     public function __set($name, $value) {
         $keys = $this->tableLine();
         if (in_array($name, $keys)) {
